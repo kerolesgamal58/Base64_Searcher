@@ -18,8 +18,8 @@ def getWorstCaseBothSides(strToBeEncoded, index):
         beginAt = 3
         strToBeEncoded = "xx" + strToBeEncoded
     strLength = len(strToBeEncoded)
-    endAt = strLength * 4 // 3
-    return getBase64( strToBeEncoded )[beginAt:endAt + 1]
+    endAt = strLength * 4 // 3        # also could be -> endAt = (strLength // 3) * 4 + strLength % 3
+    return getBase64( strToBeEncoded )[beginAt:endAt]
 
 def joinArrToString(arrToBeJoined):
     return "|".join(arrToBeJoined)
